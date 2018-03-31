@@ -22,6 +22,37 @@
   }
 
 /////////////////
+
+//////////////////////////// OTARA ////////////////////////
+
+.contenedor {
+	display: block; 
+	grid-template-columns: 50% auto;
+}
+
+.col {
+	padding: .4em 1.3em;
+}
+
+input.btn {
+	border: 0;
+	display:block;
+	align-content: center;
+	align-items: center;
+	padding:1em 3em;
+	background:#333;
+	color:#FFFFFF;
+	margin-bottom:1em;
+	cursor:pointer;
+}
+.life-container {
+	background:#3FA0E1;
+	padding:.5em;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////
 a#back{
 	width: 69px;
 	display: block;

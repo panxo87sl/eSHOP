@@ -12,7 +12,9 @@ export class DetalleproductoComponent implements OnInit {
   showText: Boolean = true;
   post;
   saveId: string;
+  price: string;
   saveTitle: string;
+  imagen: string;
   constructor(private upSvc: UploadService, private links: Router, private router: ActivatedRoute) { }
 
   ngOnInit() {
@@ -24,7 +26,9 @@ export class DetalleproductoComponent implements OnInit {
           console.log(this.post);
           this.htmlDescripcion = this.post.contenido;
           this.saveId = id;
-          this.saveTitle = this.post.titulo;          
+          this.saveTitle = this.post.titulo;
+          this.price = this.post.precio;
+          this.imagen = this.post.url;          
         });
     });
   }

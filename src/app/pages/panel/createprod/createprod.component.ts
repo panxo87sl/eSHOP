@@ -41,7 +41,7 @@ export class CreateprodComponent implements OnInit {
     this.form = fb.group({
       editor: [''],
       titulo: [''],
-	  precio: ['']
+	    precio: ['']
     });
 
   }
@@ -80,7 +80,7 @@ export class CreateprodComponent implements OnInit {
     }else{
       this.alertaImagen = false;
     }
-    if(this.form.controls['titulo'].value != '' && this.form.controls['editor'].value != '' && this.selectedFiles != null){
+    if(this.form.controls['titulo'].value != '' && this.form.controls['precio'].value != '' && this.form.controls['editor'].value != '' && this.selectedFiles != null){
       var today = new Date();
       var dd = today.getDate();
       var mm = today.getMonth()+1; //January is 0!    
@@ -89,7 +89,7 @@ export class CreateprodComponent implements OnInit {
       var min = today.getMinutes();
       var mil = today.getSeconds();
       var fecha = dd+'/'+mm+'/'+yyyy+' '+hh+':'+min+':'+mil;
-      this.post = { titulo: this.form.controls['titulo'].value, contenido: this.form.controls['editor'].value, file : this.selectedFiles.item(0),fecha: fecha};
+      this.post = { titulo: this.form.controls['titulo'].value, precio: this.form.controls['precio'].value, contenido: this.form.controls['editor'].value, file : this.selectedFiles.item(0),fecha: fecha};
       
     this.upSvc.pushUpload(this.post)
     this._myCommunicationService.emitChange(true);

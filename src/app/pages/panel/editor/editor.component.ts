@@ -25,6 +25,7 @@ export class EditorComponent implements OnInit {
   editPost: Post;
   saveId: string;
   saveTitle: string;
+  price: number;
   alertaTitulo: Boolean = false;
   alertaPrecio: Boolean = false;
   alertaNoticia: Boolean = false;
@@ -38,7 +39,7 @@ export class EditorComponent implements OnInit {
     this.form = fb.group({
       editor: ['test'],
       titulo: ['test'],
-	  precio: ['test']
+	    precio: ['test']
     });
   }
   
@@ -51,9 +52,10 @@ export class EditorComponent implements OnInit {
           this.htmlText = this.post.contenido;
           this.saveId = id;
           this.saveTitle = this.post.titulo;
+          this.price = this.post.precio;
           this.form.controls['titulo'].patchValue(this.saveTitle);
           this.form.controls['editor'].patchValue(this.htmlText);
-          
+          this.form.controls['precio'].patchValue(this.price);
         });
     });
   }
@@ -85,8 +87,8 @@ export class EditorComponent implements OnInit {
     //}else{
     //  this.alertaImagen = false;
     //}
-    if(this.form.controls['titulo'].value != '' && this.form.controls['editor'].value != ''){
-      this.post = {titulo: this.form.controls['titulo'].value, contenido: this.form.controls['editor'].value, $key:this.saveId};  
+    if(this.form.controls['titulo'].value != '' && this.form.controls['precio'].value != '' && this.form.controls['editor'].value != ''){
+      this.post = {titulo: this.form.controls['titulo'].value, precio: this.form.controls['precio'].value, contenido: this.form.controls['editor'].value, $key:this.saveId};  
       //console.log(this.post);    
       this.upSvc.updatePost(this.post)
       this._myCommunicationService.emitChange(true);

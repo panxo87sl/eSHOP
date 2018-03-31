@@ -1,16 +1,52 @@
 <app-navbar></app-navbar>
+
+<div class="container2 prod">
+  <div class= "col">
+    <h2>{{saveTitle}}</h2>
+  </div>
+</div>
+<div class="container2">
+  <div class="col imagen">
+      <img src="{{imagen}}">
+  </div>
+  <div class="col info">
+    <p>informacion del producto</p> 
+  </div>
+</div>
+<div class="container2 btnVolver">
+  <div class="col btnVolver">
+      <button class="btn btn-info btn-sm" (click)="irNoticias(key)">Volver</button> 
+  </div>	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container">
   <div class="col">
-    <div><h2>{{post.titulo}}</h2></div>
+    <div><h2>{{saveTitle}}</h2></div>
     <table>
       <tr>
         <td>
-          <img src="{{post.url}}" alt="" class="img-responsive imgPortada">
+          <img src="{{imagen}}" alt="" class="img-responsive imgPortada">
         </td>
         <td>
           <tr class="info">
             <td><h3 class="tdprecio">Precio:</h3></td>
-            <td><h2 class="tdprecio">${{post.precio}}</h2></td>
+            <td><h2 class="tdprecio">${{price}}</h2></td>
           </tr>
           <tr>
             <td class="descrip">
