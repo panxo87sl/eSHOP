@@ -26,6 +26,7 @@ export class EditorComponent implements OnInit {
   saveId: string;
   saveTitle: string;
   alertaTitulo: Boolean = false;
+  alertaPrecio: Boolean = false;
   alertaNoticia: Boolean = false;
   alertaImagen: Boolean = false;
   constructor(public authService: AuthenticationService,private upSvc: UploadService, private links: Router, private router: ActivatedRoute, private _sanitizer: DomSanitizer, private _myCommunicationService: PanelService, fb: FormBuilder) { 
@@ -36,7 +37,8 @@ export class EditorComponent implements OnInit {
 
     this.form = fb.group({
       editor: ['test'],
-      titulo: ['test']
+      titulo: ['test'],
+	  precio: ['test']
     });
   }
   
@@ -67,6 +69,11 @@ export class EditorComponent implements OnInit {
       this.alertaTitulo = false;
     }else{
       this.alertaTitulo = true;
+    }
+    if(this.form.controls['precio'].value != ''){
+      this.alertaPrecio = false;
+    }else{
+      this.alertaPrecio = true;
     }
     if(this.form.controls['editor'].value != ''){
       this.alertaNoticia = false;

@@ -1,0 +1,24 @@
+<div class="body-blur" *ngIf="authService.currentUser">
+  <div class="section-header">
+    <h2>
+      Agregar Producto
+    </h2>
+  </div>
+  <div class="container">
+
+    <form [formGroup]="form">
+      <input #titulo formControlName="titulo" placeholder="Nombre Producto " type="text">
+      <div class="alert alert-danger" [hidden]="!alertaTitulo">Ingrese Nombre</div>
+      <input #precio formControlName="precio" placeholder="Precio" type="text">
+      <div class="alert alert-danger" [hidden]="!alertaPrecio"> Ingrese Precio </div>
+      <!--<label> -->
+        <input type="file" (change)="detectFiles($event)" accept="image/jpeg,image/png">
+        <div class="alert alert-danger" [hidden]="!alertaImagen"> Ingrese Imagen </div>
+     <!--</label> -->
+      <app-tinymce #editor (onContentChanged)="logChange($event);" formControlName="editor"></app-tinymce>
+      <div class="alert alert-danger" [hidden]="!alertaNoticia"> Ingrese Descripción</div>
+   </form>
+    <button class="button" (click)="goBack()">Volver</button>
+    <button class="button" type="button" (click)="patchValue()">Agregar Producto</button> 
+  </div>
+</div> 

@@ -1,17 +1,19 @@
 <div class="body-blur" *ngIf="authService.currentUser">
   <div class="section-header">
     <h2>
-      Editar Post
+      Modificar Producto
     </h2>
   </div>
   <div class="container">
     <form [formGroup]="form">
-      <input #titulo formControlName="titulo" placeholder="Titulo..." type="text">
-      <div class="alert alert-danger" [hidden]="!alertaTitulo"> Ingrese algún titulo </div>
+      <input #titulo formControlName="titulo" placeholder="Nombre Producto" type="text">
+      <div class="alert alert-danger" [hidden]="!alertaTitulo"> Ingrese Nombre Producto</div>
+	  <input #precio formControlName="precio" placeholder="Precio" type="text">
+      <div class="alert alert-danger" [hidden]="!alertaPrecio"> Ingrese Precio </div>
       <app-tinymce #editor (onContentChanged)="logChange($event);" formControlName="editor"></app-tinymce>
-      <div class="alert alert-danger" [hidden]="!alertaNoticia"> Ingrese el texto de la noticia </div>
+      <div class="alert alert-danger" [hidden]="!alertaNoticia"> Ingrese descripción </div>
     </form>
     <button class="button" (click)="goBack()">Atras</button>
-    <button class="button" type="button" (click)="patchValue()">Guardar post</button>
+    <button class="button" type="button" (click)="patchValue()">Actualizar</button>
   </div>
 </div>

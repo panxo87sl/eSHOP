@@ -3,7 +3,7 @@
 <div class="login">
 	{{checkUserInfo()}}
 	<div *ngIf="!authService.isUserEmailLoggedIn">
-		<!--
+
 	<div style="width: 350px;" *ngIf="isNewUser">
 
 		<p *ngIf="errorMessage.length > 0" class="text-danger">
@@ -28,7 +28,7 @@
 
 		<h4 class="text-primary" (click)="changeForm()">Already have an Account? >> Log In</h4>
 	</div>
--->
+
 		<div *ngIf="!isNewUser" class="ingresar">
 
 			<h2>Ingrese a su Cuenta</h2>
@@ -52,7 +52,7 @@
 				<button type="submit" class="btn btn-info">Ingresar</button>
 			</form>
 
-			<!--	<h4 class="text-primary" (click)="changeForm()">Not have any Account yet? >> Register</h4>-->
+				<h4 class="text-primary" (click)="changeForm()">Not have any Account yet? >> Register</h4>
 <!--
 			<a *ngIf="!resetPassword && isValidMailFormat(email)" class="text-danger" (click)="sendResetEmail()">Reset Password for {{email}}</a>
 			<p *ngIf="resetPassword" class="text-success">Check your email to reset password!</p>-->

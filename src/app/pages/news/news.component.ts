@@ -34,10 +34,10 @@ export class NewsComponent implements OnInit {
   }
 
   irNoticia(id){
-    this.router.navigate(['/detalle-noticia/'+id]);
+    this.router.navigate(['/detalle-producto/'+id]);
   }
 
   irNoticias(){
-    this.router.navigate(['/noticia']);
+    this.router.navigate(['/producto']);
   }
 }

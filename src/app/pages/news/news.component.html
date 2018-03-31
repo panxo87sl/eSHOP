@@ -7,7 +7,7 @@
     </div> -->
     <div class="section-header">
         <h2>
-          Noticias
+          NUESTROS PRODUCTOS
         </h2>
     </div>
     <div class="container">
@@ -22,13 +22,14 @@
                             <!-- <figure class="profile profile-inline">
                           <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
                       </figure>-->
-                            <h4 class="card-title">{{uploads.titulo}}</h4>
+                            <p class="card-title">{{uploads.titulo}}</p>
+							<h4 class="card-price">${{uploads.precio}}</h4>
                          <!--   <div class="card-text">
                                 {{uploads.contenido}}
                             </div>-->
                         </div>
                         <div class="card-footer">
-                            <button class="btn btn-info btn-sm" (click)="irNoticia(uploads.key)">Leer Más</button>
+                            <button class="btn btn-info btn-sm" (click)="irNoticia(uploads.key)">Ver</button>
                         </div>
                     </div>
                 </div>

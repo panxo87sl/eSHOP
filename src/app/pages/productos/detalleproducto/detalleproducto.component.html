@@ -1,0 +1,77 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="col">
+    <div><h2>{{post.titulo}}</h2></div>
+    <table>
+      <tr>
+        <td>
+          <img src="{{post.url}}" alt="" class="img-responsive imgPortada">
+        </td>
+        <td>
+          <tr class="info">
+            <td><h3 class="tdprecio">Precio:</h3></td>
+            <td><h2 class="tdprecio">${{post.precio}}</h2></td>
+          </tr>
+          <tr>
+            <td class="descrip">
+              <div>
+                <h5><b>Descripción:</b></h5>
+              </div>
+              <div [innerHTML]="htmlDescripcion">                
+              </div>
+            </td>
+          </tr>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<!--  
+<div class="container">
+
+
+
+
+  <div class="col">
+    <div class="section-header">
+      <h2>
+        {{post.titulo}}
+      </h2>
+    </div>
+    <div class="col">
+      <div class="izq img">
+        
+      </div>
+
+
+
+    <div>
+      <tr>
+        <td><p class= "info">Precio: </p></td>          
+        <td><p class= "precio">{{post.precio}}</p></td>
+      </tr>
+    </div>
+
+      <div class = "der descrip" [innerHtml]="htmlText"></div>
+    </div>
+  </div>
+</div>
+-->
+<!--
+      <div class="col-md-12">
+          <div class="picture animated flipInY visible" data-animation="flipInY" data-animation-delay="500">
+              <img src="{{post.url}}" alt="" class="img-responsive imgPortada">
+          </div>
+        <div [innerHtml]="htmlText" class="NoticiaText"></div>
+      </div>
+-->
+      <div class="btnVolver col-md-12">
+        <button class="btn btn-info btn-sm" (click)="irNoticias(key)">Volver</button> 
+      </div>
+<!--
+    </div>
+    
+  </div>
+</div>
+-->
+<app-footer></app-footer>

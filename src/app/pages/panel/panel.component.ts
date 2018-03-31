@@ -44,12 +44,12 @@ export class PanelComponent implements OnInit {
 
   CreatePost() {
     this.showText = !this.showText;
-    this.router.navigate(['/panel/create_post']);
+    this.router.navigate(['/panel/create_prod']);
   }
 
   EditPost() {
     this.showText = !this.showText;
-    this.router.navigate(['/panel/edit_post']);
+    this.router.navigate(['/panel/edit_prod']);
   }
 
 //  excel() {

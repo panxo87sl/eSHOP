@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from 'app/services/authentication.service';
 
 @Component({
-  selector: 'app-editpost',
-  templateUrl: './editpost.component.html',
-  styleUrls: ['./editpost.component.scss']
+  selector: 'app-editprod',
+  templateUrl: './editprod.component.html',
+  styleUrls: ['./editprod.component.scss']
 })
-export class EditpostComponent implements OnInit {
+export class EditprodComponent implements OnInit {
   //posts: Array<Post>;
   posts;
   keys: string[];

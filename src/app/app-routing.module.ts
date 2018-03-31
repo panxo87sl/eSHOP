@@ -5,18 +5,18 @@ import { AboutusComponent } from 'app/pages/aboutus/aboutus.component';
 import { InformacionComponent } from 'app/pages/informacion/informacion.component';
 import { PanelComponent } from 'app/pages/panel/panel.component';
 import { PanelRoutingModule } from 'app/pages/panel/panel-routing.module';
-import { NoticiaComponent } from 'app/pages/noticias/noticia/noticia.component';
-import { DetallenoticiaComponent } from 'app/pages/noticias/detallenoticia/detallenoticia.component';
+import { ProductoComponent } from 'app/pages/productos/producto/producto.component';
+import { DetalleproductoComponent } from 'app/pages/productos/detalleproducto/detalleproducto.component';
 import { LoginComponent } from 'app/auth/login/login/login.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: ProductoComponent},
   {path: 'sobre-nosotros', component: AboutusComponent },
   {path: 'informacion', component: InformacionComponent },
-  { path: 'panel', component: PanelComponent},
-  {path: 'noticia', component: NoticiaComponent},
-  {path: 'detalle-noticia/:id',component: DetallenoticiaComponent},
-  { path: 'login', component: LoginComponent }
+  {path: 'panel', component: PanelComponent},
+  {path: 'producto', component: ProductoComponent},
+  {path: 'detalle-producto/:id',component: DetalleproductoComponent},
+  {path: 'login', component: LoginComponent }
 ];
 
 @NgModule({

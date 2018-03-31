@@ -10,8 +10,8 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { InformacionComponent } from './pages/informacion/informacion.component';
 import { NewsComponent } from './pages/news/news.component';
 import { PanelComponent } from './pages/panel/panel.component';
-import { CreatepostComponent } from './pages/panel/createpost/createpost.component';
-import { EditpostComponent } from './pages/panel/editpost/editpost.component';
+import { CreateprodComponent } from './pages/panel/createprod/createprod.component';
+import { EditprodComponent } from './pages/panel/editprod/editprod.component';
 import { ContactService } from 'app/services/contact.service';
 import { PanelService } from 'app/services/panel.service';
 import { TinymceModule } from 'angular2-tinymce';
@@ -24,8 +24,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from 'environments/environment';
 import { PagerService } from 'app/services/pager.service';
 import { EditorComponent } from './pages/panel/editor/editor.component';
-import { NoticiaComponent } from './pages/noticias/noticia/noticia.component';
-import { DetallenoticiaComponent } from './pages/noticias/detallenoticia/detallenoticia.component';
+import { ProductoComponent } from './pages/productos/producto/producto.component';
+import { DetalleproductoComponent } from './pages/productos/detalleproducto/detalleproducto.component';
 import { LoginComponent } from './auth/login/login/login.component';
 import { AuthenticationService } from 'app/services/authentication.service';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -43,11 +43,11 @@ export const firebaseConfig = {
     InformacionComponent,
     NewsComponent,
     PanelComponent,
-    CreatepostComponent,
-    EditpostComponent,
+    CreateprodComponent,
+    EditprodComponent,
     EditorComponent,
-    NoticiaComponent,
-    DetallenoticiaComponent,
+    ProductoComponent,
+    DetalleproductoComponent,
     LoginComponent
   ],
   imports: [

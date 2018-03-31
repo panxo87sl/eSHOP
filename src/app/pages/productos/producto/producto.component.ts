@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import { PagerService } from 'app/services/pager.service';
 
 @Component({
-  selector: 'app-noticia',
-  templateUrl: './noticia.component.html',
-  styleUrls: ['./noticia.component.scss']
+  selector: 'app-producto',
+  templateUrl: './producto.component.html',
+  styleUrls: ['./producto.component.scss']
 })
-export class NoticiaComponent implements OnInit {
+export class ProductoComponent implements OnInit {
   uploadsObservable: Array<Post>;
   posts;
   keys: string[];
@@ -32,7 +32,7 @@ export class NoticiaComponent implements OnInit {
   }
 
   irNoticia(id){
-    this.router.navigate(['/detalle-noticia/'+id]);
+    this.router.navigate(['/detalle-producto/'+id]);
   }
 
   setPage(page: number) {

@@ -3,12 +3,12 @@ import { UploadService } from 'app/services/uploads/shared/upload.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-detallenoticia',
-  templateUrl: './detallenoticia.component.html',
-  styleUrls: ['./detallenoticia.component.scss']
+  selector: 'app-detalleproducto',
+  templateUrl: './detalleproducto.component.html',
+  styleUrls: ['./detalleproducto.component.scss']
 })
-export class DetallenoticiaComponent implements OnInit {
-  htmlText: string;
+export class DetalleproductoComponent implements OnInit {
+  htmlDescripcion: string;
   showText: Boolean = true;
   post;
   saveId: string;
@@ -22,7 +22,7 @@ export class DetallenoticiaComponent implements OnInit {
         .subscribe(res => {
           this.post = res;
           console.log(this.post);
-          this.htmlText = this.post.contenido;
+          this.htmlDescripcion = this.post.contenido;
           this.saveId = id;
           this.saveTitle = this.post.titulo;          
         });
@@ -30,7 +30,7 @@ export class DetallenoticiaComponent implements OnInit {
   }
 
   irNoticias(){
-    this.links.navigate(['/noticia']);
+    this.links.navigate(['/producto']);
   }
 
 }

@@ -10,15 +10,16 @@ import { UploadService } from 'app/services/uploads/shared/upload.service';
 import { AuthenticationService } from 'app/services/authentication.service';
 
 @Component({
-  selector: 'app-createpost',
-  templateUrl: './createpost.component.html',
-  styleUrls: ['./createpost.component.scss']
+  selector: 'app-createprod',
+  templateUrl: './createprod.component.html',
+  styleUrls: ['./createprod.component.scss']
 })
-export class CreatepostComponent implements OnInit {
+export class CreateprodComponent implements OnInit {
   currentUpload: Upload;
   
   showText: Boolean = true;
   alertaTitulo: Boolean = false;
+  alertaPrecio: Boolean = false;
   alertaNoticia: Boolean = false;
   alertaImagen: Boolean = false;
   public editorContent = `<h3>I am Example content</h3>`;
@@ -39,7 +40,8 @@ export class CreatepostComponent implements OnInit {
 
     this.form = fb.group({
       editor: [''],
-      titulo: ['']
+      titulo: [''],
+	  precio: ['']
     });
 
   }
@@ -60,6 +62,12 @@ export class CreatepostComponent implements OnInit {
       this.alertaTitulo = false;
     }else{
       this.alertaTitulo = true;
+    }
+    if(this.form.controls['precio'].value != ''){
+      //this.alertaPrecio = !this.alertaPrecio;
+      this.alertaPrecio = false;
+    }else{
+      this.alertaPrecio = true;
     }
     if(this.form.controls['editor'].value != ''){
       //this.alertaNoticia = !this.alertaNoticia;
@@ -91,7 +99,7 @@ export class CreatepostComponent implements OnInit {
   
   createPost() {
     this.showText = !this.showText;
-    this.router.navigateByUrl('/create_post');
+    this.router.navigateByUrl('/create_prod');
   }
 
   goBack(): void {
