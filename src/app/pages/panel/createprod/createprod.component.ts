@@ -4,10 +4,10 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PanelService } from "app/services/panel.service";
 import { ContactService } from "app/services/contact.service";
-
 import { Upload } from 'app/services/uploads/shared/upload';
 import { UploadService } from 'app/services/uploads/shared/upload.service';
 import { AuthenticationService } from 'app/services/authentication.service';
+import { isNumber } from 'util';
 
 @Component({
   selector: 'app-createprod',
@@ -20,6 +20,7 @@ export class CreateprodComponent implements OnInit {
   showText: Boolean = true;
   alertaTitulo: Boolean = false;
   alertaPrecio: Boolean = false;
+  alertaNumero: Boolean = false;
   alertaNoticia: Boolean = false;
   alertaImagen: Boolean = false;
   public editorContent = `<h3>I am Example content</h3>`;
@@ -69,6 +70,12 @@ export class CreateprodComponent implements OnInit {
     }else{
       this.alertaPrecio = true;
     }
+    if(+this.form.controls['precio'].value){
+      //this.alertaPrecio = !this.alertaPrecio;
+      this.alertaNumero = false;
+    }else{
+      this.alertaNumero = true;
+    }
     if(this.form.controls['editor'].value != ''){
       //this.alertaNoticia = !this.alertaNoticia;
       this.alertaNoticia = false;
@@ -80,7 +87,7 @@ export class CreateprodComponent implements OnInit {
     }else{
       this.alertaImagen = false;
     }
-    if(this.form.controls['titulo'].value != '' && this.form.controls['precio'].value != '' && this.form.controls['editor'].value != '' && this.selectedFiles != null){
+    if(this.alertaTitulo == false && this.alertaPrecio == false && this.alertaNumero == false && this.alertaNoticia == false && this.selectedFiles != null){
       var today = new Date();
       var dd = today.getDate();
       var mm = today.getMonth()+1; //January is 0!    
@@ -93,13 +100,13 @@ export class CreateprodComponent implements OnInit {
       
     this.upSvc.pushUpload(this.post)
     this._myCommunicationService.emitChange(true);
-    this.router.navigate(['/panel']);
+    this.goBack();
     }
   }
   
   createPost() {
     this.showText = !this.showText;
-    this.router.navigateByUrl('/create_prod');
+    this.router.navigateByUrl('/panel/create_prod');
   }
 
   goBack(): void {

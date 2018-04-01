@@ -8,6 +8,7 @@ import { PanelRoutingModule } from 'app/pages/panel/panel-routing.module';
 import { ProductoComponent } from 'app/pages/productos/producto/producto.component';
 import { DetalleproductoComponent } from 'app/pages/productos/detalleproducto/detalleproducto.component';
 import { LoginComponent } from 'app/auth/login/login/login.component';
+import { EditprodComponent } from './pages/panel/editprod/editprod.component';
 
 const routes: Routes = [
   {path: '', component: ProductoComponent},

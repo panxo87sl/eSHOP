@@ -1,23 +1,90 @@
 <app-navbar></app-navbar>
+<!-- VERSION 3 -->
+<div class="container">
+    <div class="col principal">
+      <div><h2>{{saveTitle}}</h2></div>
+      <table>
+        <tr>
+          <td>
+            <div class="imgProd">
+              <img src="{{imagen}}" class="imgProd">
+            </div>            
+          </td>
+          <td>
+            <tr >
+              <div class="info">
+                <td>
+                  <div>
+                    <h3 class="tdprecio">Precio:</h3>
+                  </div>
+                </td>              
+                <td>
+                  <div>
+                    <h2 class="tdprecio">${{price}}</h2>
+                  </div>
+                </td>
+              </div>
+            </tr>
+            <tr>
+              <td >
+                <div class="descrip">
+                  <div>
+                        <h5><b>Descripción:</b></h5>
+                  </div>
+                  <div [innerHTML]="htmlDescripcion">                
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="contenedor btnVolver">
+      <div class="colum">
+          <button class="btn btn-info btn-sm" (click)="irNoticias()">Volver</button> 
+      </div>	
+    </div>
+<!-- VERSION 3 -->
 
-<div class="container2 prod">
-  <div class= "col">
+
+<!-- VERSION 2 -->
+<!-- 
+<div class="container">
+  <div class= "colum titulo">
     <h2>{{saveTitle}}</h2>
   </div>
-</div>
-<div class="container2">
-  <div class="col imagen">
-      <img src="{{imagen}}">
+
+  <div class="container">
+    <table>
+      <tr>
+        <td>
+          <div class="colum imagen">
+              <img src="{{imagen}}">
+          </div>
+        </td>
+        <td>
+          <div class="col info">
+              <p>informacion del producto</p> 
+            </div>
+        </td>
+      </tr>
+    </table>
+
+
   </div>
-  <div class="col info">
-    <p>informacion del producto</p> 
+
+  <div class="contenedor btnVolver">
+    <div class="colum">
+        <button class="btn btn-info btn-sm" (click)="irNoticias(key)">Volver</button> 
+    </div>	
   </div>
-</div>
-<div class="container2 btnVolver">
-  <div class="col btnVolver">
-      <button class="btn btn-info btn-sm" (click)="irNoticias(key)">Volver</button> 
-  </div>	
-</div>
+
+</div> -->
+
+
+<!-- VERSION 2 -->
 
 
 
@@ -32,10 +99,9 @@
 
 
 
+<!-- VERSION 1 -->
 
-
-
-<div class="container">
+<!-- <div class="container">
   <div class="col">
     <div><h2>{{saveTitle}}</h2></div>
     <table>
@@ -61,7 +127,7 @@
       </tr>
     </table>
   </div>
-</div>
+</div> -->
 <!--  
 <div class="container">
 
@@ -101,13 +167,15 @@
         <div [innerHtml]="htmlText" class="NoticiaText"></div>
       </div>
 -->
-      <div class="btnVolver col-md-12">
+      <!-- <div class="btnVolver col-md-12">
         <button class="btn btn-info btn-sm" (click)="irNoticias(key)">Volver</button> 
-      </div>
+      </div> -->
 <!--
     </div>
     
   </div>
 </div>
 -->
+
+<!-- VERSION 1 -->
 <app-footer></app-footer>

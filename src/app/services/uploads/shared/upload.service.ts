@@ -99,6 +99,6 @@ export class UploadService {
 
   // Actualiza al editar algun post
   updatePost(upload: Upload){
-    this.db.object(`${this.basePath}/`+upload.$key).update({titulo:upload.titulo,contenido:upload.contenido});
+    this.db.object(`${this.basePath}/`+upload.$key).update({titulo:upload.titulo,precio:upload.precio,contenido:upload.contenido});
   }
 }

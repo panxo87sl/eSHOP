@@ -11,7 +11,9 @@
           <div *ngFor="let key of pagedItems">
               <div class="col-sm-6 col-md-3 card-general">
                   <div class="card card-inverse card-info">
-                      <img class="card-img-top" src="{{posts[key].url}}"/>
+                      <div class="card-block-img">
+                        <img class="card-img-top" src="{{posts[key].url}}"/>
+                      </div>
                       <div class="card-block">
                           <p class="card-title">{{posts[key].titulo}}</p>
 						  <h4 class="card-price">${{posts[key].precio}}</h4>

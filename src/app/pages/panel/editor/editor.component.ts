@@ -6,6 +6,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { PanelService } from 'app/services/panel.service';
 import { AuthenticationService } from 'app/services/authentication.service';
+import { isNumber } from 'util';
+
 
 @Component({
   selector: 'app-editor',
@@ -13,7 +15,7 @@ import { AuthenticationService } from 'app/services/authentication.service';
   styleUrls: ['./editor.component.scss']
 })
 export class EditorComponent implements OnInit {
-  htmlText: string;
+  htmlText;
   showText: Boolean = true;
   public editorContent = `<h3>I am Example content</h3>`;
   public editorOptions = {
@@ -25,9 +27,10 @@ export class EditorComponent implements OnInit {
   editPost: Post;
   saveId: string;
   saveTitle: string;
-  price: number;
+  price: string;
   alertaTitulo: Boolean = false;
   alertaPrecio: Boolean = false;
+  alertaNumero: Boolean = false;
   alertaNoticia: Boolean = false;
   alertaImagen: Boolean = false;
   constructor(public authService: AuthenticationService,private upSvc: UploadService, private links: Router, private router: ActivatedRoute, private _sanitizer: DomSanitizer, private _myCommunicationService: PanelService, fb: FormBuilder) { 
@@ -37,9 +40,9 @@ export class EditorComponent implements OnInit {
     });
 
     this.form = fb.group({
-      editor: ['test'],
-      titulo: ['test'],
-	    precio: ['test']
+      editor: [''],
+      titulo: [''],
+	    precio: ['']
     });
   }
   
@@ -54,8 +57,8 @@ export class EditorComponent implements OnInit {
           this.saveTitle = this.post.titulo;
           this.price = this.post.precio;
           this.form.controls['titulo'].patchValue(this.saveTitle);
-          this.form.controls['editor'].patchValue(this.htmlText);
           this.form.controls['precio'].patchValue(this.price);
+          this.form.controls['editor'].patchValue(this.htmlText);
         });
     });
   }
@@ -63,22 +66,31 @@ export class EditorComponent implements OnInit {
   goBack(): void {
     // Emit your event with message
     this._myCommunicationService.emitChange(true);
-    this.links.navigate(['/panel']);
+    this.links.navigate(['panel/edit_prod']);
   }
 
   patchValue() {
     if(this.form.controls['titulo'].value != ''){
       this.alertaTitulo = false;
+      this.saveTitle = this.form.controls['titulo'].value;
     }else{
       this.alertaTitulo = true;
     }
     if(this.form.controls['precio'].value != ''){
       this.alertaPrecio = false;
+      this.price = this.form.controls['precio'].value;
     }else{
       this.alertaPrecio = true;
     }
+    if(+this.form.controls['precio'].value){
+      //this.alertaPrecio = !this.alertaPrecio;
+      this.alertaNumero = false;
+    }else{
+      this.alertaNumero = true;
+    }
     if(this.form.controls['editor'].value != ''){
       this.alertaNoticia = false;
+      this.htmlText = this.form.controls['editor'].value
     }else{
       this.alertaNoticia = true;
     }
@@ -87,13 +99,18 @@ export class EditorComponent implements OnInit {
     //}else{
     //  this.alertaImagen = false;
     //}
-    if(this.form.controls['titulo'].value != '' && this.form.controls['precio'].value != '' && this.form.controls['editor'].value != ''){
-      this.post = {titulo: this.form.controls['titulo'].value, precio: this.form.controls['precio'].value, contenido: this.form.controls['editor'].value, $key:this.saveId};  
-      //console.log(this.post);    
+    if(this.alertaTitulo == false && this.alertaPrecio == false &&  this.alertaNumero == false && this.alertaNoticia == false){
+      this.post = {titulo: this.saveTitle, precio: this.price, contenido: this.htmlText, $key:this.saveId};  
+      console.log(this.post);    
       this.upSvc.updatePost(this.post)
       this._myCommunicationService.emitChange(true);
-      this.links.navigate(['/panel']);
+      this.reinit();
     }
+  }
+
+  reinit(): void {
+    // Emit your event with message
+    this.links.navigate(['/panel/edit_prod']);
   }
 
 }

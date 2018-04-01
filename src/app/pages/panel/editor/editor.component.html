@@ -10,6 +10,7 @@
       <div class="alert alert-danger" [hidden]="!alertaTitulo"> Ingrese Nombre Producto</div>
 	  <input #precio formControlName="precio" placeholder="Precio" type="text">
       <div class="alert alert-danger" [hidden]="!alertaPrecio"> Ingrese Precio </div>
+      <div class="alert alert-danger" [hidden]="!alertaNumero"> Ingrese Número Válido </div>
       <app-tinymce #editor (onContentChanged)="logChange($event);" formControlName="editor"></app-tinymce>
       <div class="alert alert-danger" [hidden]="!alertaNoticia"> Ingrese descripción </div>
     </form>

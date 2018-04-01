@@ -4,6 +4,13 @@
       Modificar Producto
     </h2>
   </div>
+  <script>
+    function confirmar(key) {
+        if (confirm("¿Esta seguro que desea eliminar este producto?") == true) {
+                elimiarNoticia(key);
+            }
+        }
+   </script>
   <div class="container">
     <div class="row column-top">
       <!-- Fin Columna md 12 -->
@@ -57,7 +64,7 @@
                 <a routerLink="/panel/editor/{{key}}" class="cta-btn btn2">editar</a>
               </div>
               <div class="col-xs-12 col-md-2 col-lg-2">
-                <a (click)="elimiarNoticia(key)" class="cta-btn btn2">eliminar</a>
+                <a (click)="confirmareliminar(key)"  class="cta-btn btn2">eliminar</a>
               </div>
             </div>
           </div>

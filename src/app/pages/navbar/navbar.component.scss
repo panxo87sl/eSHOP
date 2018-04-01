@@ -26,11 +26,19 @@ $dropDown       : false;
     }
   }
 }
-.navbar-brand>img {
-  margin : 7px 14px;
-  margin-top: 15px;
-  @include mobile{
-    margin: 7px 10px 7px 0px;
+.navbar-brand{
+  .icon{
+    margin : 7px 14px;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 43px;
+    height: auto;
+    @include mobile{
+      margin: 7px 10px 7px 0px;
+      width: 100%;
+      max-width: 40px;
+      height: auto;
+    }
   }
 }
 
@@ -45,9 +53,9 @@ $dropDown       : false;
       margin: 0;
       font-size: 30px;
     }
-    img{
-      height: 8vh;
-    }
+    // img{
+    //   height: 8vh;
+    // }
     &:hover, &:focus {
       color: $colHighlight;
       

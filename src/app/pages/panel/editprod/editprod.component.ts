@@ -56,6 +56,12 @@ export class EditprodComponent implements OnInit {
 
   }
 
+  confirmareliminar(id) {
+    if(confirm("¿Estas seguro de eliminar este producto? \nEsta acción es irreversible.")) {
+      this.elimiarNoticia(id);
+    }
+  }
+
   elimiarNoticia(id){
     //this.router.navigate(['/detalle-noticia/'+id]);
     this.upSvc.deleteUpload(id);

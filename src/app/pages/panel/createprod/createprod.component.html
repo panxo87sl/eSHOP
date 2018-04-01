@@ -5,12 +5,12 @@
     </h2>
   </div>
   <div class="container">
-
     <form [formGroup]="form">
       <input #titulo formControlName="titulo" placeholder="Nombre Producto " type="text">
       <div class="alert alert-danger" [hidden]="!alertaTitulo">Ingrese Nombre</div>
       <input #precio formControlName="precio" placeholder="Precio" type="text">
       <div class="alert alert-danger" [hidden]="!alertaPrecio"> Ingrese Precio </div>
+      <div class="alert alert-danger" [hidden]="!alertaNumero"> Ingrese Número Válido </div>
       <!--<label> -->
         <input type="file" (change)="detectFiles($event)" accept="image/jpeg,image/png">
         <div class="alert alert-danger" [hidden]="!alertaImagen"> Ingrese Imagen </div>

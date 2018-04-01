@@ -5,6 +5,7 @@ export class Post {
     fecha: Date;
     file: File;
     progress:number;
+    precio:string;
     name:string;
     url:string;
     $key:string;
