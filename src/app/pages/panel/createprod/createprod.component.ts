@@ -70,7 +70,7 @@ export class CreateprodComponent implements OnInit {
     }else{
       this.alertaPrecio = true;
     }
-    if(+this.form.controls['precio'].value){
+    if(+this.form.controls['precio'].value && this.soloNumero(this.form.controls['precio'].value)){
       //this.alertaPrecio = !this.alertaPrecio;
       this.alertaNumero = false;
     }else{
@@ -116,6 +116,10 @@ export class CreateprodComponent implements OnInit {
 
   }
 
+  soloNumero(aux: string){
+    var precio: string = aux.replace('.','');
+    return true;
+  }
   
   logChange($event: any) {
     console.log($event);

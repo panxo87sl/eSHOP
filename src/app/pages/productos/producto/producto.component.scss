@@ -59,12 +59,14 @@ h5 {
   border: none;
   border-top: 1px solid rgba(34, 36, 38, .1);
   box-shadow: none;
-  height: 20rem;
+  height: 21rem;
 }
 
 .card-img-top {
   display: block;
   width: 20rem;
+  margin: auto;
+  
 }
 
 .card-title {
@@ -72,7 +74,7 @@ h5 {
   font-weight: 700;
   line-height: 1.2857em;
   text-align: center;
-  height: 65px;
+  height: 50px;
 }
 
 .card-text {
@@ -163,18 +165,18 @@ h5 {
   //padding-top: 100px;
   padding-bottom: 20px;
   h2{
-      padding-bottom: 10px;
-      line-height: 40px;
-      position: relative;
-      display: inline-block;
-      font-size: 45px;
-      text-transform: uppercase;
-      margin-top: 15px;
-      margin-bottom: 0;
-      font-weight: 700;
-      @include mobile {
-          font-size: 35px;
-      }
+    padding-bottom: 10px;
+    line-height: 40px;
+    position: relative;
+    display: inline-block;
+    font-size: 45px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-weight: 700;
+    @include mobile {
+        font-size: 20px;
+    }
   }
 }
 

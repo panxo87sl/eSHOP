@@ -37,4 +37,25 @@ export class DetalleproductoComponent implements OnInit {
     this.links.navigate(['/producto']);
   }
 
+  formatoPesos(aux: string){
+    var cifra:number = aux.length;
+    var i:number;
+    var cont:number = 0;
+    var precio:string='';
+    for (i = cifra-1; i>=0 ;i--){
+      if (cont == 3){
+        precio = aux[i] +'.' + precio;
+        cont = 0;
+      }else{
+        precio = aux[i]+precio;
+      }
+      cont++;
+      console.log("1cifra: " + cifra);
+      console.log("2precio: " + precio);
+      console.log("3i: " + i);
+    }
+    precio = '$'+precio;
+    return precio;
+  }
+
 }

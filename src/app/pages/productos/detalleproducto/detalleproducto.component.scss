@@ -33,6 +33,9 @@
 
 .col .imagen {
 	width: 50%;
+	@include mobile {
+		width: 35%;
+	}
 }
 .col .info {
 	width: 50%;
@@ -58,10 +61,9 @@ input.btn {
 }
 
 .principal {
-	height: 50rem;
+	height: auto;
 	h2{
 		margin-top: 5rem;
-		margin-bottom: 5rem;
 	}
 }
 
@@ -103,19 +105,46 @@ input.btn {
 	align-content: right;
 	margin-top: 30px;
 	line-height: 18px;
+	@include mobile {
+		margin-top: 10px;
+		line-height: 10px;
+	}
 }
 
-.tdprecio{
-	margin-left: 5rem;
+.tdtprecio{
+	margin-left: 18rem;
+	font-weight: bold;
+	@include mobile {
+		font-size: 14px;
+		margin-left: 5rem;
+	}
 }
+.tdprecio{
+	margin-left: 4rem;
+	@include mobile {
+		font-size: 20px;
+	}
+}
+
 
 .descrip{
 	margin-top: 30px;
-	margin-left: 5rem;
-	text-align: left;
+	margin-left: 18rem;
+	text-align: justify;
 	line-height: 18px;
 	font-size: 14px;
-	width: 50rem;
+	width: 45rem;
+	@include mobile {
+		font-size: 10px;
+		width: 20rem;
+		margin-left: 5rem;
+	}
+	h2{
+		font-size: 20px;
+		@include mobile {
+			font-size: 10px;
+		}
+	}
 }
 
 .btnVolver{
@@ -133,9 +162,12 @@ input.btn {
 }
 
 .imgProd{
-	width: 35rem;
+	width: 30rem;
+	margin: 0;
+	@include mobile {
+		width: 13rem;
+	}
 }
-
 
 
 

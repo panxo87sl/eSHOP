@@ -20,6 +20,7 @@ $dropDown       : false;
 .navbar-brand {
   display: flex;
   align-items: center;
+  text-align: middle;
   p{
     @include mobile{
       font-size: 22px !important;

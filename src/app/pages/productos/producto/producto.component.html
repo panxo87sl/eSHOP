@@ -12,11 +12,11 @@
               <div class="col-sm-6 col-md-3 card-general">
                   <div class="card card-inverse card-info">
                       <div class="card-block-img">
-                        <img class="card-img-top" src="{{posts[key].url}}"/>
+                        <a (click)="irNoticia(key)"><img class="card-img-top" src="{{posts[key].url}}"></a>
                       </div>
                       <div class="card-block">
                           <p class="card-title">{{posts[key].titulo}}</p>
-						  <h4 class="card-price">${{posts[key].precio}}</h4>
+						              <h4 class="card-price" >${{formatoPesos(posts[key].precio)}}</h4>
                       </div>
                       <div class="card-footer">
                          <button class="btn btn-info btn-sm" (click)="irNoticia(key)">Ver</button> 
