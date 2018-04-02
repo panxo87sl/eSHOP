@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class OtaraTemplatePage {
+export class eSHOPPage {
   navigateTo() {
     return browser.get('/');
   }

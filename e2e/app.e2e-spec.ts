@@ -1,10 +1,10 @@
-import { OtaraTemplatePage } from './app.po';
+import { eSHOPPage } from './app.po';
 
-describe('otara-template App', () => {
-  let page: OtaraTemplatePage;
+describe('eshop App', () => {
+  let page: eSHOPPage;
 
   beforeEach(() => {
-    page = new OtaraTemplatePage();
+    page = new eSHOPPage();
   });
 
   it('should display welcome message', () => {
