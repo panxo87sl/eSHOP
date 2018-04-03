@@ -23,6 +23,9 @@ export class CreateprodComponent implements OnInit {
   alertaNumero: Boolean = false;
   alertaNoticia: Boolean = false;
   alertaImagen: Boolean = false;
+  Title: String = '';
+  Price: String = '';
+  Descripcion: String = '';
   public editorContent = `<h3>I am Example content</h3>`;
   public editorOptions = {
     placeholder: "insert content..."
@@ -70,7 +73,7 @@ export class CreateprodComponent implements OnInit {
     }else{
       this.alertaPrecio = true;
     }
-    if(+this.form.controls['precio'].value && this.soloNumero(this.form.controls['precio'].value)){
+    if(+this.form.controls['precio'].value){
       //this.alertaPrecio = !this.alertaPrecio;
       this.alertaNumero = false;
     }else{
@@ -96,7 +99,12 @@ export class CreateprodComponent implements OnInit {
       var min = today.getMinutes();
       var mil = today.getSeconds();
       var fecha = dd+'/'+mm+'/'+yyyy+' '+hh+':'+min+':'+mil;
-      this.post = { titulo: this.form.controls['titulo'].value, precio: this.form.controls['precio'].value, contenido: this.form.controls['editor'].value, file : this.selectedFiles.item(0),fecha: fecha};
+
+      this.Title = this.form.controls['titulo'].value;
+      this.Price = this.soloNumero(this.form.controls['precio'].value);
+      this.Descripcion = this.form.controls['editor'].value;
+
+      this.post = { titulo: this.Title, precio: this.Price, contenido: this.Descripcion, file : this.selectedFiles.item(0),fecha: fecha};
       
     this.upSvc.pushUpload(this.post)
     this._myCommunicationService.emitChange(true);
@@ -118,7 +126,7 @@ export class CreateprodComponent implements OnInit {
 
   soloNumero(aux: string){
     var precio: string = aux.replace('.','');
-    return true;
+    return precio;
   }
   
   logChange($event: any) {

@@ -85,6 +85,7 @@ export class EditorComponent implements OnInit {
     if(+this.form.controls['precio'].value){
       //this.alertaPrecio = !this.alertaPrecio;
       this.alertaNumero = false;
+      this.price = this.soloNumero(this.form.controls['precio'].value);
     }else{
       this.alertaNumero = true;
     }
@@ -111,6 +112,11 @@ export class EditorComponent implements OnInit {
   reinit(): void {
     // Emit your event with message
     this.links.navigate(['/panel/edit_prod']);
+  }
+
+  soloNumero(aux: string){
+    var precio: string = aux.replace('.','');
+    return precio;
   }
 
 }
